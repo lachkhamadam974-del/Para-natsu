@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Natsu la caquita 💩</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;600&display=swap');
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Poppins,sans-serif;
+  color:white;
+  background:radial-gradient(ellipse at top,#42165d,#160d22 55%,#050408);
+  overflow-x:hidden;
+}
+
+main{
+  position:relative;
+  z-index:1;
+  max-width:650px;
+  margin:auto;
+  padding:25px 18px 45px;
+}
+
+.card{
+  margin:8vh auto 0;
+  padding:30px 22px;
+  border:1px solid #b76cff66;
+  border-radius:25px;
+  background:#170e22ee;
+  box-shadow:0 0 40px #a52cff22;
+  text-align:center;
+  animation:appear .8s ease;
+}
+
+h1,h2{font-family:Fredoka,sans-serif}
+
+h1{
+  font-size:clamp(2rem,8vw,3rem);
+  color:#e3a5ff;
+  text-shadow:0 0 20px #bb55ff66;
+}
+
+.sub{color:#d7b8e9;line-height:1.7}
+
+.poop{
+  font-size:65px;
+  animation:bounce 1.5s infinite;
+}
+
+input{
+  width:100%;
+  padding:15px;
+  margin:12px 0;
+  border-radius:14px;
+  border:1px solid #b76cff;
+  background:#0b0710;
+  color:white;
+  font-size:22px;
+  text-align:center;
+  letter-spacing:8px;
+}
+
+button{
+  border:0;
+  border-radius:14px;
+  padding:13px 20px;
+  background:linear-gradient(100deg,#a855f7,#ec4899);
+  color:white;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+button:hover{transform:translateY(-2px)}
+
+#error{color:#ff8bbd;min-height:22px}
+
+#gift{display:none;animation:appear 1s ease}
+
+.letter{
+  padding:25px;
+  border:1px solid #b76cff66;
+  border-radius:22px;
+  background:#1a1024ee;
+  box-shadow:0 0 30px #a855f722;
+}
+
+.letter p{
+  line-height:1.9;
+  font-size:16px;
+  color:#f3e8ff;
+}
+
+.letter .opening{
+  text-align:center;
+  color:#f0abfc;
+  font-family:Fredoka,sans-serif;
+  font-size:25px;
+}
+
+.music{
+  margin:20px 0;
+  padding:20px;
+  border-radius:20px;
+  background:#241333;
+  border:1px solid #a855f766;
+  text-align:center;
+}
+
+footer{
+  text-align:center;
+  color:#c4b5fd;
+  font-size:12px;
+  margin-top:25px;
+}
+
+.float{
+  position:fixed;
+  bottom:-50px;
+  z-index:5;
+  pointer-events:none;
+  animation:floatUp linear forwards;
+}
+
+.hidden{display:none!important}
+
+@keyframes appear{
+  from{opacity:0;transform:translateY(25px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes bounce{
+  50%{transform:translateY(-10px) rotate(8deg)}
+}
+
+@keyframes floatUp{
+  to{transform:translateY(-115vh) rotate(35deg);opacity:0}
+}
+
+@media(max-width:420px){
+  .letter{padding:19px}
+  .letter p{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<main>
+  <section class="card" id="lock">
+    <div class="poop">💩💀</div>
+    <h1>¡EH, NATSU!</h1>
+    <p class="sub">
+      La caquita tiene un regalo para ti...
+      <br>Pero no te emociones, pendeja JAJAJA 😭
+    </p>
+
+    <form id="login">
+      <input id="pass" type="password"
+      inputmode="numeric" maxlength="4"
+      placeholder="••••" autocomplete="off">
+      <button type="submit">ABRIR REGALO 💜</button>
+    </form>
+    <p id="error"></p>
+    <footer>Solo para la caquita oficial 💩</footer>
+  </section>
+
+  <section id="gift">
+    <div class="card">
+      <div class="poop">💩</div>
+      <h1>Para Natsu</h1>
+      <p class="sub">La caquita más desgraciada del mundo 💀💜</p>
+
+      <section class="music">
+        <h2>🎵 Música para ti</h2>
+        <p class="sub">Hasta música tienes, malagradecida JAJAJA.</p>
+        <button id="musicBtn">▶ PONER MÚSICA</button>
+        <p class="sub">Una musiquita graciosa hecha para este regalo.</p>
+      </section>
+
+      <article class="letter">
+        <p class="opening">para Natsu la caquita💩</p>
+
+        <p>Felicidades, perra. No sé qué hice para tener una amiga tan pendeja, estúpida y pesada como tú, pero aquí estamos. Eres una desgraciada, a veces me pregunto cómo puedes ser tan tonta.</p>
+
+        <p>Pero bueno, aunque seas una hdp y me den ganas de mandarte a la mierda cada cinco minutos, eres una persona a la que le tengo cariño. Porque detrás de todos los insultos, las peleas y las tonterías, también hay risas y momentos que hacen que esta amistad sea especial.</p>
+
+        <p>Así que no te emociones demasiado, tampoco eres tan importante, pedazo de mieda. Pero quería hacerte este regalito para que tengas algo mío y recuerdes que, aunque te insulte hasta mañana, te aprecio mucho, desgraciada. ❤️‍🩹</p>
+      </article>
+
+      <h2 style="text-align:center;color:#e3a5ff;margin-top:28px">
+        JAJAJA NO LLORES, CAQUITA 💀
+      </h2>
+
+      <div style="text-align:center;margin-top:20px">
+        <button id="surpriseBtn">OTRA SORPRESA 👀</button>
+        <p id="surprise" class="hidden">
+          ERES UNA HDP, PERO TE QUIERO, TONTA. 💩💜
+        </p>
+      </div>
+
+      <footer>Hecho con cariño y muchas faltas de respeto 😂</footer>
+    </div>
+  </section>
+</main>
+
+<script>
+// CAMBIA LA CONTRASEÑA AQUÍ
+const PASSWORD = "6767";
+
+const login = document.getElementById("login");
+const pass = document.getElementById("pass");
+const error = document.getElementById("error");
+
+login.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  if(pass.value === PASSWORD){
+    document.getElementById("lock").style.display = "none";
+    document.getElementById("gift").style.display = "block";
+    window.scrollTo({top:0,behavior:"smooth"});
+    rain(30);
+  }else{
+    error.textContent = "CONTRASEÑA INCORRECTA, PATATA 💀";
+    pass.value = "";
+  }
+});
+
+// Música graciosa generada por la página
+let audio = null;
+let musicTimer = null;
+let playing = false;
+let note = 0;
+
+function funnyMusic(){
+  if(!audio) return;
+
+  const melody = [
+    523,659,784,659,587,698,880,698,
+    523,587,659,392,523,784,659,440
+  ];
+
+  const osc = audio.createOscillator();
+  const gain = audio.createGain();
+
+  osc.type = note % 3 === 0 ? "square" : "triangle";
+  osc.frequency.value = melody[note % melody.length];
+
+  gain.gain.setValueAtTime(0.0001,audio.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.07,audio.currentTime+0.03);
+  gain.gain.exponentialRampToValueAtTime(0.0001,audio.currentTime+0.18);
+
+  osc.connect(gain);
+  gain.connect(audio.destination);
+  osc.start();
+  osc.stop(audio.currentTime+0.2);
+  note++;
+}
+
+document.getElementById("musicBtn").addEventListener("click",async function(){
+  if(!playing){
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+
+    if(!AudioContext){
+      alert("Tu navegador no permite reproducir esta música.");
+      return;
+    }
+
+    audio = audio || new AudioContext();
+    if(audio.state === "suspended") await audio.resume();
+
+    playing = true;
+    this.textContent = "■ PARAR MÚSICA";
+    funnyMusic();
+    musicTimer = setInterval(funnyMusic,220);
+  }else{
+    playing = false;
+    clearInterval(musicTimer);
+    this.textContent = "▶ PONER MÚSICA";
+  }
+});
+
+// Sorpresa final
+document.getElementById("surpriseBtn").addEventListener("click",function(){
+  document.getElementById("surprise").classList.remove("hidden");
+  this.style.display = "none";
+  rain(25);
+});
+
+// Corazones, calaveras y cacas flotantes
+function rain(amount){
+  const symbols = ["💜","💩","💀","💖","✨","😭"];
+
+  for(let i=0;i<amount;i++){
+    setTimeout(()=>{
+      const el = document.createElement("span");
+      el.className = "float";
+      el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+      el.style.left = Math.random()*100+"vw";
+      el.style.fontSize = (18+Math.random()*22)+"px";
+      el.style.animationDuration = (4+Math.random()*4)+"s";
+      document.body.appendChild(el);
+      setTimeout(()=>el.remove(),8500);
+    },i*80);
+  }
+}
+</script>
+</body>
+</html>
