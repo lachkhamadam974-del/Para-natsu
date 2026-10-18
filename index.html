@@ -2,373 +2,336 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>para natsu ♡</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Natsu 💜</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --bg:#0c0911;
-  --panel:#17111f;
-  --purple:#b99ad9;
-  --pink:#d7a6c8;
-  --text:#f4edf8;
-  --muted:#b9aabd;
-  --line:#5a426c;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-*{box-sizing:border-box}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #29163d, #100d16 55%, #08070b);
+      color: #f5edf9;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 22px;
+    }
 
-body{
-  margin:0;
-  min-height:100vh;
-  background:
-    radial-gradient(ellipse at 50% 0%,#30203d 0%,transparent 55%),
-    var(--bg);
-  color:var(--text);
-  font-family:'DM Sans',sans-serif;
-}
+    .container {
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+    }
 
-main{
-  width:min(100% - 32px,520px);
-  margin:auto;
-  padding:45px 0;
-}
+    .small-title {
+      color: #c6a2e8;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
 
-.screen{
-  min-height:calc(100vh - 90px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 39px;
+      font-weight: 500;
+      margin: 0 0 12px;
+    }
 
-.card{
-  width:100%;
-  padding:30px 24px;
-  border:1px solid #ffffff12;
-  border-radius:24px;
-  background:linear-gradient(145deg,#1c1425ed,#110d17f5);
-  box-shadow:0 20px 70px #0006;
-  animation:appear .8s ease both;
-}
+    .subtitle {
+      color: #b9aabe;
+      font-size: 13px;
+      margin-bottom: 27px;
+    }
 
-.eyebrow{
-  color:var(--purple);
-  text-transform:uppercase;
-  font-size:10px;
-  letter-spacing:3px;
-  text-align:center;
-}
+    .panel {
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(210, 170, 245, 0.2);
+      border-radius: 22px;
+      padding: 25px 20px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(12px);
+    }
 
-h1,h2{
-  font-family:'Cormorant Garamond',serif;
-  font-weight:500;
-}
+    .display {
+      min-height: 47px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.24);
+      border: 1px solid rgba(210, 170, 245, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      letter-spacing: 9px;
+      margin-bottom: 18px;
+      color: #e2c4ff;
+    }
 
-h1{
-  font-size:43px;
-  line-height:1.1;
-  text-align:center;
-  margin:15px 0 8px;
-}
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
 
-.subtitle{
-  text-align:center;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.8;
-}
+    button {
+      border: 1px solid rgba(218, 184, 245, 0.18);
+      background: rgba(178, 123, 218, 0.1);
+      color: #fff;
+      border-radius: 13px;
+      min-height: 48px;
+      font-family: inherit;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
 
-.ornament{
-  text-align:center;
-  color:var(--purple);
-  margin:24px 0;
-  letter-spacing:8px;
-  font-size:13px;
-}
+    button:active {
+      transform: scale(0.96);
+      background: rgba(178, 123, 218, 0.3);
+    }
 
-.dots{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  margin:25px 0;
-}
+    .action {
+      font-size: 12px;
+      color: #d8b7f4;
+    }
 
-.dot{
-  width:11px;
-  height:11px;
-  border:1px solid #9575ad;
-  border-radius:50%;
-  transition:.2s;
-}
+    .message {
+      min-height: 20px;
+      margin-top: 15px;
+      font-size: 12px;
+      color: #e6b8d3;
+    }
 
-.dot.filled{
-  background:var(--purple);
-  box-shadow:0 0 12px #b99ad955;
-}
+    #letter {
+      display: none;
+      animation: appear 1s ease;
+    }
 
-.keypad{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  max-width:310px;
-  margin:0 auto;
-}
+    .letter-card {
+      text-align: left;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(210, 170, 245, 0.2);
+      border-radius: 22px;
+      padding: 27px 22px;
+      line-height: 1.9;
+      font-size: 14px;
+      color: #e8deed;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    }
 
-.key{
-  min-height:55px;
-  color:var(--text);
-  background:#ffffff06;
-  border:1px solid #ffffff15;
-  border-radius:14px;
-  font-family:'DM Sans',sans-serif;
-  font-size:19px;
-  cursor:pointer;
-  transition:background .2s,border .2s,transform .2s;
-}
+    .letter-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 500;
+      text-align: center;
+      color: #e0bdfc;
+      margin: 0 0 22px;
+    }
 
-.key:hover{
-  background:#b99ad91c;
-  border-color:#b99ad966;
-}
+    .letter-card p {
+      margin: 0 0 17px;
+    }
 
-.key:active{transform:scale(.96)}
+    .signature {
+      text-align: center;
+      color: #d5a7f3;
+      margin-top: 22px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 23px;
+    }
 
-.key.action{
-  color:var(--purple);
-  font-size:13px;
-}
+    .music {
+      margin-top: 20px;
+      padding: 18px;
+      border: 1px solid rgba(210, 170, 245, 0.2);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+    }
 
-#error{
-  min-height:20px;
-  text-align:center;
-  color:#e6a8bc;
-  font-size:12px;
-  margin-top:15px;
-}
+    .music h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 500;
+      margin: 0 0 5px;
+    }
 
-#gift{display:none}
+    .music p {
+      font-size: 12px;
+      color: #b9aabe;
+      margin: 0 0 14px;
+    }
 
-.letter{
-  padding:30px 25px;
-  border:1px solid #ffffff12;
-  border-radius:20px;
-  background:#ffffff04;
-  animation:appear 1s ease both;
-}
+    .music a {
+      color: #e0bdfb;
+      text-decoration: none;
+      border-bottom: 1px solid #a87bd0;
+      font-size: 13px;
+    }
 
-.letter h2{
-  text-align:center;
-  font-size:34px;
-  margin:0 0 8px;
-  color:#e5c9f3;
-}
+    .footer {
+      margin-top: 23px;
+      font-size: 11px;
+      color: #83758e;
+      letter-spacing: 1px;
+    }
 
-.letter .intro{
-  text-align:center;
-  color:var(--pink);
-  font-size:13px;
-  margin-bottom:26px;
-}
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.letter p{
-  font-size:14px;
-  line-height:2;
-  color:#e9dfef;
-  margin:0 0 19px;
-}
+    .shake {
+      animation: shake 0.3s;
+    }
 
-.music{
-  margin:25px 0;
-  padding:19px;
-  border:1px solid #ffffff12;
-  border-radius:17px;
-  background:#0e0a13;
-}
-
-.music h2{
-  font-size:25px;
-  text-align:center;
-  margin:0 0 6px;
-}
-
-.music p{
-  text-align:center;
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.7;
-}
-
-iframe{
-  display:block;
-  width:100%;
-  height:190px;
-  border:0;
-  border-radius:12px;
-  margin-top:15px;
-}
-
-.signature{
-  text-align:center;
-  font-family:'Cormorant Garamond',serif;
-  font-size:25px;
-  color:var(--pink);
-  margin-top:25px;
-}
-
-.footer{
-  text-align:center;
-  color:#8f7d9a;
-  font-size:10px;
-  letter-spacing:1px;
-  margin-top:25px;
-}
-
-.hidden{display:none!important}
-
-@keyframes appear{
-  from{opacity:0;transform:translateY(12px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-@media(max-width:380px){
-  main{width:calc(100% - 22px)}
-  .card{padding:25px 17px}
-  .letter{padding:24px 18px}
-  h1{font-size:38px}
-}
-</style>
+    @keyframes shake {
+      25% { transform: translateX(-4px); }
+      50% { transform: translateX(4px); }
+      75% { transform: translateX(-4px); }
+    }
+  </style>
 </head>
 
 <body>
-<main>
-  <section class="screen" id="lockScreen">
-    <div class="card">
-      <p class="eyebrow">un pequeño regalo</p>
-      <h1>para natsu</h1>
-      <p class="subtitle">
-        la caquita más especial<br>
-        introduce la contraseña para continuar
-      </p>
+  <main class="container">
 
-      <div class="ornament">— ♡ —</div>
+    <section id="lock">
+      <div class="small-title">un pequeño regalo</div>
+      <h1>Algo para ti 💜</h1>
+      <p class="subtitle">Hay una cosita esperándote...</p>
 
-      <div class="dots" id="dots">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+      <div class="panel" id="panel">
+        <p style="font-size:13px; color:#c7b5d2;">
+          Introduce la contraseña
+        </p>
+
+        <div class="display" id="display">····</div>
+
+        <div class="keypad">
+          <button onclick="press(1)">1</button>
+          <button onclick="press(2)">2</button>
+          <button onclick="press(3)">3</button>
+          <button onclick="press(4)">4</button>
+          <button onclick="press(5)">5</button>
+          <button onclick="press(6)">6</button>
+          <button onclick="press(7)">7</button>
+          <button onclick="press(8)">8</button>
+          <button onclick="press(9)">9</button>
+          <button class="action" onclick="clearCode()">Borrar</button>
+          <button onclick="press(0)">0</button>
+          <button class="action" onclick="backspace()">⌫</button>
+        </div>
+
+        <button onclick="checkPassword()" style="width:100%; margin-top:13px; background:rgba(174,117,220,0.25);">
+          Abrir regalo
+        </button>
+
+        <div class="message" id="message"></div>
+      </div>
+    </section>
+
+    <section id="letter">
+      <div class="small-title">para alguien especial</div>
+
+      <div class="letter-card">
+        <h2>Para Natsu, la caquita 💩</h2>
+
+        <p>
+          Felicidades, perra. No sé qué hice para tener una amiga tan pendeja,
+          estúpida y pesada como tú, pero aquí estamos. Eres una desgraciada,
+          a veces me pregunto cómo puedes ser tan tonta.
+        </p>
+
+        <p>
+          Pero bueno, aunque seas una hdp y me den ganas de mandarte a la mierda
+          cada cinco minutos, eres una persona a la que le tengo cariño.
+          Porque detrás de todos los insultos, las peleas y las tonterías,
+          también hay risas y momentos que hacen que esta amistad sea especial.
+        </p>
+
+        <p>
+          Así que no te emociones demasiado, tampoco eres tan importante,
+          pedazo de mieda. Pero quería hacerte este regalito para que tengas
+          algo mío y recuerdes que, aunque te insulte hasta mañana,
+          te aprecio mucho, desgraciada. ❤️‍🩹
+        </p>
+
+        <div class="signature">Con cariño 💜</div>
       </div>
 
-      <div class="keypad">
-        <button class="key" data-number="1">1</button>
-        <button class="key" data-number="2">2</button>
-        <button class="key" data-number="3">3</button>
-        <button class="key" data-number="4">4</button>
-        <button class="key" data-number="5">5</button>
-        <button class="key" data-number="6">6</button>
-        <button class="key" data-number="7">7</button>
-        <button class="key" data-number="8">8</button>
-        <button class="key" data-number="9">9</button>
-        <button class="key action" id="clear">borrar</button>
-        <button class="key" data-number="0">0</button>
-        <button class="key action" id="backspace">⌫</button>
+      <div class="music">
+        <h3>Y ahora viene lo importante 💀</h3>
+        <p>La canción que te mereces JAJAJA</p>
+        <a href="https://www.youtube.com/results?search_query=GeamRock+Vamos+Nena"
+           target="_blank" rel="noopener noreferrer">
+          Escuchar «Vamos Nena» — GeamRock 🎵
+        </a>
       </div>
 
-      <p id="error"></p>
-      <p class="footer">hecho especialmente para ti</p>
-    </div>
-  </section>
+      <div class="footer">HECHO CON CARIÑO Y UN POCO DE ODIO 💜</div>
+    </section>
+  </main>
 
-  <section id="gift">
-    <div class="card">
-      <p class="eyebrow">edición especial · para ti</p>
-      <h1>natsu, la caquita</h1>
-      <p class="subtitle">no te emociones demasiado, pendeja.</p>
-      <div class="ornament">— ♡ —</div>
+  <script>
+    const PASSWORD = "6767";
+    let code = "";
 
-      <section class="music">
-        <h2>una canción para ti</h2>
-        <p>dale al play si te apetece escucharla mientras lees.</p>
+    const display = document.getElementById("display");
+    const message = document.getElementById("message");
 
-        <!-- Puedes cambiar el vídeo por otro de YouTube.
-             Sustituye VIDEO_ID por el identificador del vídeo. -->
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/jhx3hYS__JI"
-          title="Música para Natsu"
-          loading="lazy"
-          allow="encrypted-media; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </section>
+    function updateDisplay() {
+      display.textContent = code
+        ? "●".repeat(code.length) + "·".repeat(4 - code.length)
+        : "····";
+    }
 
-      <article class="letter">
-        <h2>para natsu la caquita💩</h2>
-        <p class="intro">una carta escrita con cariño y un poco de maldad</p>
+    function press(number) {
+      if (code.length >= 4) return;
+      code += String(number);
+      updateDisplay();
+      message.textContent = "";
+    }
 
-        <p>Felicidades, perra. No sé qué hice para tener una amiga tan pendeja, estúpida y pesada como tú, pero aquí estamos. Eres una desgraciada, a veces me pregunto cómo puedes ser tan tonta.</p>
+    function clearCode() {
+      code = "";
+      updateDisplay();
+      message.textContent = "";
+    }
 
-        <p>Pero bueno, aunque seas una hdp y me den ganas de mandarte a la mierda cada cinco minutos, eres una persona a la que le tengo cariño. Porque detrás de todos los insultos, las peleas y las tonterías, también hay risas y momentos que hacen que esta amistad sea especial.</p>
+    function backspace() {
+      code = code.slice(0, -1);
+      updateDisplay();
+      message.textContent = "";
+    }
 
-        <p>Así que no te emociones demasiado, tampoco eres tan importante, pedazo de mieda. Pero quería hacerte este regalito para que tengas algo mío y recuerdes que, aunque te insulte hasta mañana, te aprecio mucho, desgraciada. ❤️‍🩹</p>
-
-        <div class="signature">tu desgracia favorita ♡</div>
-      </article>
-
-      <p class="footer">fin de la carta. ahora vete, pesada.</p>
-    </div>
-  </section>
-</main>
-
-<script>
-// contraseña fácil de cambiar
-const PASSWORD = "6767";
-let entered = "";
-
-const dots = document.querySelectorAll(".dot");
-const error = document.getElementById("error");
-
-function updateDots(){
-  dots.forEach((dot,i)=>{
-    dot.classList.toggle("filled",i<entered.length);
-  });
-}
-
-function unlock(){
-  if(entered === PASSWORD){
-    document.getElementById("lockScreen").style.display = "none";
-    document.getElementById("gift").style.display = "block";
-    window.scrollTo({top:0,behavior:"smooth"});
-  }else if(entered.length === 4){
-    error.textContent = "contraseña incorrecta, inténtalo otra vez.";
-    entered = "";
-    updateDots();
-  }
-}
-
-document.querySelectorAll("[data-number]").forEach(button=>{
-  button.addEventListener("click",()=>{
-    if(entered.length >= 4) return;
-    entered += button.dataset.number;
-    error.textContent = "";
-    updateDots();
-    if(entered.length === 4) setTimeout(unlock,180);
-  });
-});
-
-document.getElementById("clear").addEventListener("click",()=>{
-  entered = "";
-  error.textContent = "";
-  updateDots();
-});
-
-document.getElementById("backspace").addEventListener("click",()=>{
-  entered = entered.slice(0,-1);
-  error.textContent = "";
-  updateDots();
-});
-</script>
+    function checkPassword() {
+      if (code === PASSWORD) {
+        document.getElementById("lock").style.display = "none";
+        document.getElementById("letter").style.display = "block";
+      } else {
+        message.textContent = "Contraseña incorrecta, espabila JAJAJA 💀";
+        document.getElementById("panel").classList.remove("shake");
+        void document.getElementById("panel").offsetWidth;
+        document.getElementById("panel").classList.add("shake");
+        code = "";
+        updateDisplay();
+      }
+    }
+  </script>
 </body>
 </html>
