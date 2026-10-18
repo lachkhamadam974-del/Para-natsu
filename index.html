@@ -30,6 +30,7 @@
       width: 100%;
       max-width: 440px;
       text-align: center;
+      margin: auto;
     }
 
     .small-title {
@@ -150,7 +151,7 @@
     }
 
     .music {
-      margin-top: 20px;
+      margin: 18px 0;
       padding: 18px;
       border: 1px solid rgba(210, 170, 245, 0.2);
       border-radius: 18px;
@@ -170,11 +171,11 @@
       margin: 0 0 14px;
     }
 
-    .music a {
-      color: #e0bdfb;
-      text-decoration: none;
-      border-bottom: 1px solid #a87bd0;
-      font-size: 13px;
+    .music iframe {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
     }
 
     .footer {
@@ -248,43 +249,50 @@
     <section id="letter">
       <div class="small-title">para alguien especial</div>
 
+      <div class="music">
+        <h3>La banda sonora de esta amistad 💀</h3>
+        <p>Dale al play y lee la carta mientras suena JAJAJA</p>
+
+        <iframe
+          height="166"
+          src="https://www.youtube-nocookie.com/embed/kRkl3ZhCH68"
+          title="Vamos Nena - GeamRock"
+          loading="lazy"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
       <div class="letter-card">
         <h2>Para Natsu, la caquita 💩</h2>
 
         <p>
-          Felicidades, perra. No sé qué hice para tener una amiga tan pendeja,
-          estúpida y pesada como tú, pero aquí estamos. Eres una desgraciada,
-          a veces me pregunto cómo puedes ser tan tonta.
+          Perra. No sé qué hice para tener una amiga tan pendeja,
+          estúpida y pesada como tú, pero aquí estamos. Eres una
+          desgraciada, a veces me pregunto cómo puedes ser tan tonta.
         </p>
 
         <p>
-          Pero bueno, aunque seas una hdp y me den ganas de mandarte a la mierda
-          cada cinco minutos, eres una persona a la que le tengo cariño.
-          Porque detrás de todos los insultos, las peleas y las tonterías,
-          también hay risas y momentos que hacen que esta amistad sea especial.
+          Pero bueno, aunque seas una hdp y me den ganas de mandarte
+          a la mierda cada cinco minutos, eres una persona a la que le
+          tengo cariño. Porque detrás de todos los insultos, las peleas
+          y las tonterías, también hay risas y momentos que hacen que
+          esta amistad sea especial.
         </p>
 
         <p>
           Así que no te emociones demasiado, tampoco eres tan importante,
-          pedazo de mieda. Pero quería hacerte este regalito para que tengas
-          algo mío y recuerdes que, aunque te insulte hasta mañana,
+          pedazo de mieda. Pero quería hacerte este regalito para que
+          tengas algo mío y recuerdes que, aunque te insulte hasta mañana,
           te aprecio mucho, desgraciada. ❤️‍🩹
         </p>
 
         <div class="signature">Con cariño 💜</div>
       </div>
 
-      <div class="music">
-        <h3>Y ahora viene lo importante 💀</h3>
-        <p>La canción que te mereces JAJAJA</p>
-        <a href="https://www.youtube.com/results?search_query=GeamRock+Vamos+Nena"
-           target="_blank" rel="noopener noreferrer">
-          Escuchar «Vamos Nena» — GeamRock 🎵
-        </a>
-      </div>
-
       <div class="footer">HECHO CON CARIÑO Y UN POCO DE ODIO 💜</div>
     </section>
+
   </main>
 
   <script>
@@ -325,9 +333,12 @@
         document.getElementById("letter").style.display = "block";
       } else {
         message.textContent = "Contraseña incorrecta, espabila JAJAJA 💀";
-        document.getElementById("panel").classList.remove("shake");
-        void document.getElementById("panel").offsetWidth;
-        document.getElementById("panel").classList.add("shake");
+
+        const panel = document.getElementById("panel");
+        panel.classList.remove("shake");
+        void panel.offsetWidth;
+        panel.classList.add("shake");
+
         code = "";
         updateDisplay();
       }
