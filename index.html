@@ -4,312 +4,371 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Natsu la caquita 💩</title>
+<title>para natsu ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;600&display=swap');
+:root{
+  --bg:#0c0911;
+  --panel:#17111f;
+  --purple:#b99ad9;
+  --pink:#d7a6c8;
+  --text:#f4edf8;
+  --muted:#b9aabd;
+  --line:#5a426c;
+}
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
   min-height:100vh;
-  font-family:Poppins,sans-serif;
-  color:white;
-  background:radial-gradient(ellipse at top,#42165d,#160d22 55%,#050408);
-  overflow-x:hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%,#30203d 0%,transparent 55%),
+    var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
 }
 
 main{
-  position:relative;
-  z-index:1;
-  max-width:650px;
+  width:min(100% - 32px,520px);
   margin:auto;
-  padding:25px 18px 45px;
+  padding:45px 0;
+}
+
+.screen{
+  min-height:calc(100vh - 90px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .card{
-  margin:8vh auto 0;
-  padding:30px 22px;
-  border:1px solid #b76cff66;
-  border-radius:25px;
-  background:#170e22ee;
-  box-shadow:0 0 40px #a52cff22;
-  text-align:center;
-  animation:appear .8s ease;
+  width:100%;
+  padding:30px 24px;
+  border:1px solid #ffffff12;
+  border-radius:24px;
+  background:linear-gradient(145deg,#1c1425ed,#110d17f5);
+  box-shadow:0 20px 70px #0006;
+  animation:appear .8s ease both;
 }
 
-h1,h2{font-family:Fredoka,sans-serif}
+.eyebrow{
+  color:var(--purple);
+  text-transform:uppercase;
+  font-size:10px;
+  letter-spacing:3px;
+  text-align:center;
+}
+
+h1,h2{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+}
 
 h1{
-  font-size:clamp(2rem,8vw,3rem);
-  color:#e3a5ff;
-  text-shadow:0 0 20px #bb55ff66;
-}
-
-.sub{color:#d7b8e9;line-height:1.7}
-
-.poop{
-  font-size:65px;
-  animation:bounce 1.5s infinite;
-}
-
-input{
-  width:100%;
-  padding:15px;
-  margin:12px 0;
-  border-radius:14px;
-  border:1px solid #b76cff;
-  background:#0b0710;
-  color:white;
-  font-size:22px;
+  font-size:43px;
+  line-height:1.1;
   text-align:center;
-  letter-spacing:8px;
+  margin:15px 0 8px;
 }
 
-button{
-  border:0;
-  border-radius:14px;
-  padding:13px 20px;
-  background:linear-gradient(100deg,#a855f7,#ec4899);
-  color:white;
-  font-weight:bold;
-  font-size:15px;
-  cursor:pointer;
+.subtitle{
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+}
+
+.ornament{
+  text-align:center;
+  color:var(--purple);
+  margin:24px 0;
+  letter-spacing:8px;
+  font-size:13px;
+}
+
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin:25px 0;
+}
+
+.dot{
+  width:11px;
+  height:11px;
+  border:1px solid #9575ad;
+  border-radius:50%;
   transition:.2s;
 }
 
-button:hover{transform:translateY(-2px)}
+.dot.filled{
+  background:var(--purple);
+  box-shadow:0 0 12px #b99ad955;
+}
 
-#error{color:#ff8bbd;min-height:22px}
+.keypad{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  max-width:310px;
+  margin:0 auto;
+}
 
-#gift{display:none;animation:appear 1s ease}
+.key{
+  min-height:55px;
+  color:var(--text);
+  background:#ffffff06;
+  border:1px solid #ffffff15;
+  border-radius:14px;
+  font-family:'DM Sans',sans-serif;
+  font-size:19px;
+  cursor:pointer;
+  transition:background .2s,border .2s,transform .2s;
+}
+
+.key:hover{
+  background:#b99ad91c;
+  border-color:#b99ad966;
+}
+
+.key:active{transform:scale(.96)}
+
+.key.action{
+  color:var(--purple);
+  font-size:13px;
+}
+
+#error{
+  min-height:20px;
+  text-align:center;
+  color:#e6a8bc;
+  font-size:12px;
+  margin-top:15px;
+}
+
+#gift{display:none}
 
 .letter{
-  padding:25px;
-  border:1px solid #b76cff66;
-  border-radius:22px;
-  background:#1a1024ee;
-  box-shadow:0 0 30px #a855f722;
+  padding:30px 25px;
+  border:1px solid #ffffff12;
+  border-radius:20px;
+  background:#ffffff04;
+  animation:appear 1s ease both;
+}
+
+.letter h2{
+  text-align:center;
+  font-size:34px;
+  margin:0 0 8px;
+  color:#e5c9f3;
+}
+
+.letter .intro{
+  text-align:center;
+  color:var(--pink);
+  font-size:13px;
+  margin-bottom:26px;
 }
 
 .letter p{
-  line-height:1.9;
-  font-size:16px;
-  color:#f3e8ff;
-}
-
-.letter .opening{
-  text-align:center;
-  color:#f0abfc;
-  font-family:Fredoka,sans-serif;
-  font-size:25px;
+  font-size:14px;
+  line-height:2;
+  color:#e9dfef;
+  margin:0 0 19px;
 }
 
 .music{
-  margin:20px 0;
-  padding:20px;
-  border-radius:20px;
-  background:#241333;
-  border:1px solid #a855f766;
-  text-align:center;
+  margin:25px 0;
+  padding:19px;
+  border:1px solid #ffffff12;
+  border-radius:17px;
+  background:#0e0a13;
 }
 
-footer{
+.music h2{
+  font-size:25px;
   text-align:center;
-  color:#c4b5fd;
+  margin:0 0 6px;
+}
+
+.music p{
+  text-align:center;
+  color:var(--muted);
   font-size:12px;
+  line-height:1.7;
+}
+
+iframe{
+  display:block;
+  width:100%;
+  height:190px;
+  border:0;
+  border-radius:12px;
+  margin-top:15px;
+}
+
+.signature{
+  text-align:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:25px;
+  color:var(--pink);
   margin-top:25px;
 }
 
-.float{
-  position:fixed;
-  bottom:-50px;
-  z-index:5;
-  pointer-events:none;
-  animation:floatUp linear forwards;
+.footer{
+  text-align:center;
+  color:#8f7d9a;
+  font-size:10px;
+  letter-spacing:1px;
+  margin-top:25px;
 }
 
 .hidden{display:none!important}
 
 @keyframes appear{
-  from{opacity:0;transform:translateY(25px)}
+  from{opacity:0;transform:translateY(12px)}
   to{opacity:1;transform:translateY(0)}
 }
 
-@keyframes bounce{
-  50%{transform:translateY(-10px) rotate(8deg)}
-}
-
-@keyframes floatUp{
-  to{transform:translateY(-115vh) rotate(35deg);opacity:0}
-}
-
-@media(max-width:420px){
-  .letter{padding:19px}
-  .letter p{font-size:15px}
+@media(max-width:380px){
+  main{width:calc(100% - 22px)}
+  .card{padding:25px 17px}
+  .letter{padding:24px 18px}
+  h1{font-size:38px}
 }
 </style>
 </head>
+
 <body>
-
 <main>
-  <section class="card" id="lock">
-    <div class="poop">💩💀</div>
-    <h1>¡EH, NATSU!</h1>
-    <p class="sub">
-      La caquita tiene un regalo para ti...
-      <br>Pero no te emociones, pendeja JAJAJA 😭
-    </p>
+  <section class="screen" id="lockScreen">
+    <div class="card">
+      <p class="eyebrow">un pequeño regalo</p>
+      <h1>para natsu</h1>
+      <p class="subtitle">
+        la caquita más especial<br>
+        introduce la contraseña para continuar
+      </p>
 
-    <form id="login">
-      <input id="pass" type="password"
-      inputmode="numeric" maxlength="4"
-      placeholder="••••" autocomplete="off">
-      <button type="submit">ABRIR REGALO 💜</button>
-    </form>
-    <p id="error"></p>
-    <footer>Solo para la caquita oficial 💩</footer>
+      <div class="ornament">— ♡ —</div>
+
+      <div class="dots" id="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <div class="keypad">
+        <button class="key" data-number="1">1</button>
+        <button class="key" data-number="2">2</button>
+        <button class="key" data-number="3">3</button>
+        <button class="key" data-number="4">4</button>
+        <button class="key" data-number="5">5</button>
+        <button class="key" data-number="6">6</button>
+        <button class="key" data-number="7">7</button>
+        <button class="key" data-number="8">8</button>
+        <button class="key" data-number="9">9</button>
+        <button class="key action" id="clear">borrar</button>
+        <button class="key" data-number="0">0</button>
+        <button class="key action" id="backspace">⌫</button>
+      </div>
+
+      <p id="error"></p>
+      <p class="footer">hecho especialmente para ti</p>
+    </div>
   </section>
 
   <section id="gift">
     <div class="card">
-      <div class="poop">💩</div>
-      <h1>Para Natsu</h1>
-      <p class="sub">La caquita más desgraciada del mundo 💀💜</p>
+      <p class="eyebrow">edición especial · para ti</p>
+      <h1>natsu, la caquita</h1>
+      <p class="subtitle">no te emociones demasiado, pendeja.</p>
+      <div class="ornament">— ♡ —</div>
 
       <section class="music">
-        <h2>🎵 Música para ti</h2>
-        <p class="sub">Hasta música tienes, malagradecida JAJAJA.</p>
-        <button id="musicBtn">▶ PONER MÚSICA</button>
-        <p class="sub">Una musiquita graciosa hecha para este regalo.</p>
+        <h2>una canción para ti</h2>
+        <p>dale al play si te apetece escucharla mientras lees.</p>
+
+        <!-- Puedes cambiar el vídeo por otro de YouTube.
+             Sustituye VIDEO_ID por el identificador del vídeo. -->
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/jhx3hYS__JI"
+          title="Música para Natsu"
+          loading="lazy"
+          allow="encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>
       </section>
 
       <article class="letter">
-        <p class="opening">para Natsu la caquita💩</p>
+        <h2>para natsu la caquita💩</h2>
+        <p class="intro">una carta escrita con cariño y un poco de maldad</p>
 
         <p>Felicidades, perra. No sé qué hice para tener una amiga tan pendeja, estúpida y pesada como tú, pero aquí estamos. Eres una desgraciada, a veces me pregunto cómo puedes ser tan tonta.</p>
 
         <p>Pero bueno, aunque seas una hdp y me den ganas de mandarte a la mierda cada cinco minutos, eres una persona a la que le tengo cariño. Porque detrás de todos los insultos, las peleas y las tonterías, también hay risas y momentos que hacen que esta amistad sea especial.</p>
 
         <p>Así que no te emociones demasiado, tampoco eres tan importante, pedazo de mieda. Pero quería hacerte este regalito para que tengas algo mío y recuerdes que, aunque te insulte hasta mañana, te aprecio mucho, desgraciada. ❤️‍🩹</p>
+
+        <div class="signature">tu desgracia favorita ♡</div>
       </article>
 
-      <h2 style="text-align:center;color:#e3a5ff;margin-top:28px">
-        JAJAJA NO LLORES, CAQUITA 💀
-      </h2>
-
-      <div style="text-align:center;margin-top:20px">
-        <button id="surpriseBtn">OTRA SORPRESA 👀</button>
-        <p id="surprise" class="hidden">
-          ERES UNA HDP, PERO TE QUIERO, TONTA. 💩💜
-        </p>
-      </div>
-
-      <footer>Hecho con cariño y muchas faltas de respeto 😂</footer>
+      <p class="footer">fin de la carta. ahora vete, pesada.</p>
     </div>
   </section>
 </main>
 
 <script>
-// CAMBIA LA CONTRASEÑA AQUÍ
+// contraseña fácil de cambiar
 const PASSWORD = "6767";
+let entered = "";
 
-const login = document.getElementById("login");
-const pass = document.getElementById("pass");
+const dots = document.querySelectorAll(".dot");
 const error = document.getElementById("error");
 
-login.addEventListener("submit", function(e){
-  e.preventDefault();
+function updateDots(){
+  dots.forEach((dot,i)=>{
+    dot.classList.toggle("filled",i<entered.length);
+  });
+}
 
-  if(pass.value === PASSWORD){
-    document.getElementById("lock").style.display = "none";
+function unlock(){
+  if(entered === PASSWORD){
+    document.getElementById("lockScreen").style.display = "none";
     document.getElementById("gift").style.display = "block";
     window.scrollTo({top:0,behavior:"smooth"});
-    rain(30);
-  }else{
-    error.textContent = "CONTRASEÑA INCORRECTA, PATATA 💀";
-    pass.value = "";
-  }
-});
-
-// Música graciosa generada por la página
-let audio = null;
-let musicTimer = null;
-let playing = false;
-let note = 0;
-
-function funnyMusic(){
-  if(!audio) return;
-
-  const melody = [
-    523,659,784,659,587,698,880,698,
-    523,587,659,392,523,784,659,440
-  ];
-
-  const osc = audio.createOscillator();
-  const gain = audio.createGain();
-
-  osc.type = note % 3 === 0 ? "square" : "triangle";
-  osc.frequency.value = melody[note % melody.length];
-
-  gain.gain.setValueAtTime(0.0001,audio.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.07,audio.currentTime+0.03);
-  gain.gain.exponentialRampToValueAtTime(0.0001,audio.currentTime+0.18);
-
-  osc.connect(gain);
-  gain.connect(audio.destination);
-  osc.start();
-  osc.stop(audio.currentTime+0.2);
-  note++;
-}
-
-document.getElementById("musicBtn").addEventListener("click",async function(){
-  if(!playing){
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
-
-    if(!AudioContext){
-      alert("Tu navegador no permite reproducir esta música.");
-      return;
-    }
-
-    audio = audio || new AudioContext();
-    if(audio.state === "suspended") await audio.resume();
-
-    playing = true;
-    this.textContent = "■ PARAR MÚSICA";
-    funnyMusic();
-    musicTimer = setInterval(funnyMusic,220);
-  }else{
-    playing = false;
-    clearInterval(musicTimer);
-    this.textContent = "▶ PONER MÚSICA";
-  }
-});
-
-// Sorpresa final
-document.getElementById("surpriseBtn").addEventListener("click",function(){
-  document.getElementById("surprise").classList.remove("hidden");
-  this.style.display = "none";
-  rain(25);
-});
-
-// Corazones, calaveras y cacas flotantes
-function rain(amount){
-  const symbols = ["💜","💩","💀","💖","✨","😭"];
-
-  for(let i=0;i<amount;i++){
-    setTimeout(()=>{
-      const el = document.createElement("span");
-      el.className = "float";
-      el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
-      el.style.left = Math.random()*100+"vw";
-      el.style.fontSize = (18+Math.random()*22)+"px";
-      el.style.animationDuration = (4+Math.random()*4)+"s";
-      document.body.appendChild(el);
-      setTimeout(()=>el.remove(),8500);
-    },i*80);
+  }else if(entered.length === 4){
+    error.textContent = "contraseña incorrecta, inténtalo otra vez.";
+    entered = "";
+    updateDots();
   }
 }
+
+document.querySelectorAll("[data-number]").forEach(button=>{
+  button.addEventListener("click",()=>{
+    if(entered.length >= 4) return;
+    entered += button.dataset.number;
+    error.textContent = "";
+    updateDots();
+    if(entered.length === 4) setTimeout(unlock,180);
+  });
+});
+
+document.getElementById("clear").addEventListener("click",()=>{
+  entered = "";
+  error.textContent = "";
+  updateDots();
+});
+
+document.getElementById("backspace").addEventListener("click",()=>{
+  entered = entered.slice(0,-1);
+  error.textContent = "";
+  updateDots();
+});
 </script>
 </body>
 </html>
